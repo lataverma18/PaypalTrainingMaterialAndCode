@@ -1,0 +1,334 @@
+Shutdown Hook
+---------------
+Runtime.getRuntime()
+
+addShutDownHook();
+
+Thread
+-------
+-SubProcess
+-Light Weighted Process
+-Common Memory of Process & Registers
+-Independent parts of a process
+-Executed paralley
+
+2 Ways
+---------
+-Extending Thread Class
+-Implementing Runnable
+
+Collections
+-------------
+-To get different data structures in Java
+-Dynamic Arrays
+-Add Any type element till the time you don't restrict the collection to hae same type of elements
+
+Collection Framework
+-------------------------
+java.util
+List--->Ordered Collection, Duplicates
+
+Set --->Ordered/Unordered, No Duplicates
+
+HashSet- Random Order/Duplicacy is not allowed
+
+
+Generics
+--------
+- Generic programming
+- Reusable Code
+- Reduces Boiler Plate Code 
+- Type Safety
+
+
+class A<T>
+{
+	T i;
+	void set(T i)
+	{
+		this.i=i;
+	}
+}
+
+
+
+A<Integer> a1=new A<>(); --> i -> Integer
+	a1.set(10);
+	a1.set("Hello");	//Error
+A<String> a2=new A<>(); --> i -> String
+	a2.set("Hi");
+	a2.set(20);		//Error
+A<Boolean> a3=new A<>(); --> i -> Boolean
+	a3.set(true);
+	a3.set(10);		//Error
+
+A a4=new A();
+a4.set(10);
+a4.set("Hello");
+
+Bounded And Unbounded Types in Generics
+---------------------------------------------
+A<Integer> --> Type Safe Only for Integer
+A	   --> Not Type Safe, Raw Type , Object- All the Types
+
+1, All-> some set of
+
+Wild Cards
+------------
+Bounded Types ---> 	<? extends ...>		->Covariant Type 
+			<? super ...>		->Contra- Variant Type
+
+Unbounded ---> <?>
+
+Generics (PECS) - Producer Extends Consumer Super
+
+<? extends ...> 		--> 		Producer
+<? super ...>			-->		Consumer
+
+
+
+arr-->
+Enhanced For Loop/ For Each
+for(String temp:arr)
+{
+	s.o.p(temp);
+}
+
+
+ArrayList<Object> --> object type 
+
+Lambda Expressions - jdk 1.8
+----------------------------
+Functional Interfaces
+
+Method Reference
+----------------
+
+49-Functional Interfaces (java.util.function)
+----------------------------------------------
+Supplier<T>
+	T get();
+Consumer<T>
+	void accept(T t)
+	BiConsumer
+	IntConsumer
+Predicate<T>
+	boolean test(T t)
+	BiPredicate
+Function<T,R>
+	R apply(T t)	
+
+
+
+Stream API
+-------------
+
+
+get(Inf i)
+{
+}
+
+Types of Stream API Methods
+-----------------------------------
+Intermediate method
+Terminal Methods
+
+ExecutorService Pattern /Concurrency Framework
+-----------------------------------------------
+Callable
+Runnable
+
+Multithreading
+- Ease to Developer 
+
+-Executor, ExecutorService - More Featured Interfaces,Improvised -> Functionality of the thread/task - creation of thread and managing the life cycle of thread is taken care by Thread Pool
+
+-Noramlly threads get dead after completing their task, so to utilize them again for new task- using Thread Pool
+
+
+Thread-1
+Thread-2
+
+Fixed Thread pool
+Cached
+Scheduled
+SingleThread
+
+
+V call()
+
+--------------
+jdk 1.8 Work Stealing using fork/join
+
+JDBC
+-----
+Java Database Connectivity
+--------------------------
+1. Register the Driver
+2. Make the Connection using Driver Manager
+....
+
+
+Method Reference
+---------------------
+Inf1
+{
+	void abc();
+	default void set(){}
+}
+
+A
+{
+	void get(){s.o.p("hii");
+	s.o.p("hello")}
+	void put();
+}
+
+::
+
+Inf1 i1=()->{
+	s.o.p("hii");
+	s.o.p("hello")
+	};  
+
+Inf1 i1=a1::get;
+ 
+A a1...
+
+Inf1 i1=a1::put;
+i1.abc();
+i1.set();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

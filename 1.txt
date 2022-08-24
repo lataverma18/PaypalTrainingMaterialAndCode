@@ -1,0 +1,368 @@
+Encapsulation
+
+class Class_Name
+{
+	Properties/Data Members/Fields/variables
+	Behaviour/operation/method
+}
+
+Access Specifier
+-----------------
+1. Private
+2. default / No Access Specifier - Package Friendly
+3. protected
+4. public 
+
+Getters-Accessors/Setters-Mutators
+
+this keyword
+--------------
+-Reference to current instance
+-Any method but
+Not in static method
+
+this()- used to call current class Constructors
+
+With Class public/default
+
+Constructors
+----------------
+Special Method
+- NAme should be same as class
+- No Return type , not even void 
+- Called automatically during instantiation
+
+
+
+class A
+{
+		
+}
+
+
+A a1=new A(12);
+
+ static members/instance members
+----------------------------------
+1. common value/ separate memory
+2. stack memory / Heap Memory
+3. Once only memory is taken/ according to the no of objects
+4. During class loading / instantiating
+5. First/later
+6. can be used inside static methods/ cannot be 
+7. Class Variables/ Instance Variable
+8. Accessed with Class Name also/ object name
+
+
+
+static keyword-
+---------------------
+static int i; 
+common value of data member is to be shared among all the objects of a class 
+
+methods:-
+----------------
+1. Accessed with class name
+2. Access only static members from outside
+
+class A
+{
+static int i;
+int j;
+static void get()
+{
+	j
+}
+}
+
+A.get();
+
+Static Block/Initializer
+-----------------------------
+static
+{
+}
+
+
+Boiler Plate Code
+
+static import
+------------------
+import static java.....;
+
+Relationship between classes
+-------------------------------
+-> is - a	-> Inheritance
+-> has-a	-> Aggregation
+
+Car is a Vehicle
+
+Vehicle (Super/Base/Parent)
+ |
+Car (Sub/Derived/Child)
+
+- Constructor are never inherited
+
+Polymorphism
+----------------
+
+C - xyz()
+|
+B - xyz()
+|
+A
+
+Dynamic Binding
+-------------------
+Base ref=new Base();
+ref.display();
+
+Base ref=new Derived();		//Upcasting(Implicitly)
+ref.display();	//Dynamic Binding
+
+Derived d=new Base();		//Compile Time Error- Type Mismatch (DownCasting- Not done implicitly)
+Derived d=(Derived)new Base();		//Run Time Error (ClassCastException)
+
+Base ref=new Derived();		//Upcasting
+Derived d=(Derived)ref;			//Backward Typecasting
+
+Derived d=new Derived();
+
+
+Abstract Classes & Interface
+--------------------------------
+
+-cannot be Instantiated but a reference variable can be created
+
+AbstractClass
+ |
+A
+- a1.
+
+
+abstract class A
+{
+	abstract void get();
+}
+
+final 
+-------
+Variable - Constant -> final int i=10; i++; //Error
+method   - Cannot Override -> final void get(){}
+class    - Cannot Inherited -> final class A{}
+
+class B extends A
+{
+	
+}
+
+1. Yes we can have constructor in Abstract class
+2. abstract method cannot be static,private,final
+
+Interfaces
+-----------
+Pure Abstract form of a class
+
+abstract class A
+{
+	abstract void get();
+	abstract void put();
+}
+
+interface Inf1
+{
+	static final int i=10;
+	void get();
+	void put();
+}
+interface Inf2 extends Inf1
+{
+}
+
+class B extends A
+{
+	
+}
+
+class B1 extends C implements Inf1,Inf2
+{
+	
+}
+
+Button
+-------
+on,off
+
+Laptop
+-------
+- On(),Off()
+
+TV
+---
+- On(),Off()
+
+Jdk 1.8 Interfaces
+--------------------
+-interfaces with method body and can be either default/static
+
+Functional Interface
+--------------------
+interface with only 1 abstract method
+
+@FunctionalInterface
+interface inf1
+{
+	void get();
+	default void put(){}
+}
+
+Types of Interfaces
+------------------
+1. Functional Interface
+2. Marker Interface (Without any method)
+3. Interface for Constants
+
+interface Inf1
+{
+	int PI=3.17
+		
+}
+
+
+
+
+
+String
+-------
+String str1="Lata";			//Literal Notation
+String str2="Lata";
+String str1=new String("Lata");		//Object Notation
+String str2=new String("Lata");	
+
+immutable
+
+To make Strings Mutable
+StringBuffer - Thread Safe
+StringBuilder - Not Thread Safe
+
+String str="Lata";
+StringBuilder sb=new StringBuilder(str);
+sb.append(" Verma");
+sysout(sb);
+
+Object
+--------
+class A
+{
+}
+class A extends Object
+{
+}
+
+class B extends A
+{
+}
+
+Wrapper Classes - 8 
+---------------------
+int a =10;
+int b=20;
+s.o.p(a+b);
+
+int- Integer
+
+class A
+{
+	private A()
+	{
+	}
+	static A getObject()
+	{
+		A a1=new A();
+		return a1;
+	}
+}
+
+
+A a1=A.getObject();
+
+
+class PrintStream
+{
+	void println(){}
+}
+
+class System
+{
+	static PrintStream out;
+
+	void get()
+	{
+	}
+}
+
+
+System.out.println();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

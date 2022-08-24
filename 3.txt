@@ -1,0 +1,90 @@
+Spring Framework
+----------------
+- Rest API
+- Web Applications
+- IOC (Inversion of Control)
+- AOP (Aspect Oriented Programming)
+- Loosely Coupled modules
+- Spring JPA, Spring Hibernate , Spring Jdbc
+- Easy to Test
+- Dependency Injection
+- Spring Huge Library
+
+Spring Core, Spring MVC, Spring Rest, Spring Cloud
+
+DI leads for having loosely coupled modules
+
+class A
+{
+	A(int i,int j,int k){}
+	int get(){}	
+}
+
+class B
+{
+	void put(A a1)     //Dependency is injected
+	{	//Dependency is created
+		int i=a1.get();
+		s.o.p(++i);
+	}
+}
+
+
+Dependency Injection
+-----------------------
+1. Setter Injection
+2. Constructor Injection
+3. Object Injection
+
+
+Map- K,V
+
+properties
+k,v---> string
+
+k=v
+
+IOC Container/ Spring Container/ BeanFactory/ ApplicationContext
+
+BeanFactory
+ |
+ApplicationContext
+
+-Register Shut down Hook
+-to Provide Java based Configuration
+-instatiate bean during initialization of ApplicationContext
+
+PropertyPlaceHolderConfigurer
+
+Scope of Bean instance
+-----------------------
+- Singleton
+- prototype
+
+Autowiring
+-----------
+Injecting an available object in the framework automatically to the setter of a datamember of a class.
+
+Ways to Write bean Configuration
+----------------------------
+1. Xml based 
+2. Annotation Based (XML+Annotation)
+3. Java Based Configuration - Pure Java Based
+
+Layered Architecture
+---------------------
+Controller/Service/Repository
+
+Autowring of layers
+---------------------
+
+Spring JDBC
+------------------
+
+
+
+
+
+
+
+
