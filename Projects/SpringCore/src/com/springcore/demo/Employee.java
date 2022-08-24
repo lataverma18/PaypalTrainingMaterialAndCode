@@ -1,11 +1,14 @@
 package com.springcore.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("emp1")
 @Scope(value="prototype")
+@PropertySource(value = { "myproperty.properties" })
 //employee
 public class Employee {
 	private int id;
@@ -34,18 +37,21 @@ public class Employee {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+	@Value("${emp.id}")
 	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
 		return name;
 	}
+	@Value("${emp.name}")
 	public void setName(String name) {
 		this.name = name;
 	}
 	public int getSalary() {
 		return salary;
 	}
+	@Value("${emp.salary}")
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}

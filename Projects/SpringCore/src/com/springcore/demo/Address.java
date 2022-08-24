@@ -1,5 +1,6 @@
 package com.springcore.demo;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -8,11 +9,7 @@ public class Address {
 	private String city;
 	private String state;
 	private int zipcode;
-	public Address()
-	{
-		System.out.println("Address Constructor!!!");
-	}
-	public Address(String address, String city, String state, int zipcode) {
+	public Address(@Value("E-455/49") String address, @Value("Gurugram") String city, @Value("Haryana") String state, @Value("122001") int zipcode) {
 		super();
 		this.address = address;
 		this.city = city;
