@@ -1,0 +1,65 @@
+Spring Boot
+------------
+-Convention over configuration
+-Embedded Tomcat Server
+-Huge Library
+-Production Ready
+-Good Performance - Optimized methods
+-Main method
+
+3 Ways to create Spring Boot Applications
+------------------------------------------
+1. Using STS IDE (Spring Tool Suite)
+2. Spring Initializer (spring.io)
+3. CommandLine
+
+
+REST
+----
+Web Service
+- Interoperability -web services (Language Barrier)
+- Default web accepted format for webservices - JSON (Java Script Object Notation)
+- Representational State Transfer Protocol
+- Http protocol
+	-HttpMethod - GET-READ,POST-CREATE,PUT-UPDATE,DELETE-DELETE
+- Back End Services
+
+Requested URL - Endpoint
+--------------------------
+http://localhost:8085/employees
+
+Resource 
+--------
+Entity about which REST API is created
+
+
+Resource - Weather
+--------------------
+C	Create	Post	@PostMapping	/weathers
+R	READ	Get	@GetMapping	/weathers			-All Records
+					/weathers/{zoneId}		-Fetch by zoneId
+			http://localhost:8085/weathers/11
+					/weathers/{tempreture}			
+			http://localhost:8085/weathers/byTempreture/35
+U	Update	Update	@UpdateMapping	/weathers/{zoneId}		-Update this record
+D	Delete	Delete  @DeleteMapping	/weathers/{zoneId}		-Delete the reord by Id
+
+
+
+PostMan
+----------
+
+{
+	"id":101,
+	"salary":45000
+}
+
+Employee
+-----------
+id=101
+name=null
+salary=45000
+
+RestTemplate
+--------------
+- Consume/Test the Rest Endpoints
