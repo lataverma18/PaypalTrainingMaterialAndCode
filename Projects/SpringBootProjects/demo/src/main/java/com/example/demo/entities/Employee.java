@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.hateoas.RepresentationModel;
 import org.springframework.stereotype.Component;
 
-public class Employee{
+public class Employee extends RepresentationModel<Employee>{
 	private int id;
 	private String name;
 	private int salary;
