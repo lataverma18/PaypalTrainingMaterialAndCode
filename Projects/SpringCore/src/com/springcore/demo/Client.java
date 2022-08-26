@@ -20,11 +20,12 @@ public class Client {
 		Employee e=(Employee)bf.getBean("emp1");		//downcasting
 		//Employee e=bf.getBean(Employee.class);
 		e.greet();
-		
-		ArrayList al=bf.getBean(ArrayList.class);
+		Product p=(Product)bf.getBean("p");
+		p.greet();
+		/*ArrayList al=bf.getBean(ArrayList.class);
 		System.out.println(al);
 		ArrayList al1=bf.getBean(ArrayList.class);
 		System.out.println(al1);
-		System.out.println(e.getId()+"\t"+e.getName()+"\t"+e.getSalary()+"\t"+e.getAddress().getAddress()+"\t"+e.getAddress().getCity()+"\t"+e.getAddress().getState()+"\t"+e.getAddress().getZipcode());
+		System.out.println(e.getId()+"\t"+e.getName()+"\t"+e.getSalary()+"\t"+e.getAddress().getAddress()+"\t"+e.getAddress().getCity()+"\t"+e.getAddress().getState()+"\t"+e.getAddress().getZipcode());*/
 	}
 }

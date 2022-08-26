@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("emp1")
-@Scope(value="prototype")
+//@Scope(value="prototype")
 @PropertySource(value = { "myproperty.properties" })
 //employee
 public class Employee {
@@ -57,6 +57,17 @@ public class Employee {
 	}
 	public void greet()
 	{
+		test();
+		//BL
 		System.out.println("Hello Everyone, Welcome to Paypal!!!");
+		//BL Code
+		//Log Statments
+	}
+	
+	private void test()
+	{
+		System.out.println("Private test method of Employee");
+		//BL Code
+		//Log Statments
 	}
 }

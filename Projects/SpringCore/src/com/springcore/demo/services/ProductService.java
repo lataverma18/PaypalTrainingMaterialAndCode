@@ -16,4 +16,9 @@ public class ProductService {
 	public List<Product> getAllProducts(){
 	return pr.getAllProducts();
 }
+	public String insertProduct(Product p)
+	{
+		return pr.insertProduct(p);
+	}
+		
 }

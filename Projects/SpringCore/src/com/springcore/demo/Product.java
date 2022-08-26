@@ -22,5 +22,8 @@ public int getProductPrice() {
 public void setProductPrice(int productPrice) {
 	this.productPrice = productPrice;
 }
-
+public void greet()
+{
+	System.out.println("greet of Product");
+}
 }

@@ -16,4 +16,8 @@ public class ProductController {
 	public List<Product> getAllProducts(){
 		return ps.getAllProducts();
 	}
+	public String insertProduct(Product p)
+	{
+		return ps.insertProduct(p);
+	}
 }

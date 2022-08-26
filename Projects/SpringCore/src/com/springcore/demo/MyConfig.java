@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Scope;
 @ComponentScan(basePackages= {"com.springcore.demo","com.springcore.demo.controllers","com.springcore.demo.repository","com.springcore.demo.services"})
 
 public class MyConfig {
-	@Bean
+	@Bean("arrL")
 	//@Scope("prototype")
 	public ArrayList<Employee> getArrayList()
 	{
@@ -24,21 +24,21 @@ public class MyConfig {
 		return all;
 	}
 	
-	@Bean
-	public DriverManagerDataSource ds()
+	@Bean("ds")
+	public DriverManagerDataSource getDs()
 	{
 		DriverManagerDataSource drms=new DriverManagerDataSource();
 		drms.setDriverClassName("org.postgresql.Driver");
 		drms.setUrl("jdbc:postgresql://localhost:5432/TempDB");
 		drms.setUsername("postgres");
 		drms.setPassword("system");
-		System.out.println(drms);
 		return drms;
 	}
-	@Bean
-	public JdbcTemplate jdt()
+	@Bean("jdt")
+	public JdbcTemplate jdt(DriverManagerDataSource ds)
 	{
-		return new JdbcTemplate();
+		JdbcTemplate jt=new JdbcTemplate(ds);
+		return jt;
 	}
 	@Bean("prm")
 	public ProductRowMapper getRowMapper()
@@ -46,10 +46,10 @@ public class MyConfig {
 		return new ProductRowMapper();
 	}
 	@Bean("p")
+	//@Scope("prototype")
 	public Product getProduct()
 	{
 		Product p=new Product();
-		System.out.println(p);
 		return p;
 	}
 }

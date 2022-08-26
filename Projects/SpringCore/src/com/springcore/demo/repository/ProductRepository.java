@@ -1,6 +1,5 @@
 package com.springcore.demo.repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,23 +13,24 @@ import com.springcore.demo.ProductRowMapper;
 @Component("pr")
 public class ProductRepository {
 	@Autowired
-	JdbcTemplate jdt;
-	@Autowired
 	DriverManagerDataSource ds;
+	@Autowired
+	JdbcTemplate jdt;
 	@Autowired
 	ProductRowMapper prm;
 	
-	public ProductRepository()
-	{
-		System.out.println(jdt);
-		System.out.println(ds);
-		jdt.setDataSource(ds);
-	}
 	
-	public List<Product> getAllProducts()
+	public List<Product> getAllProducts(){
+		return jdt.query("select * from Product", prm);
+	}
+	public String insertProduct(Product p)
 	{
-		String sql="select * from Product";
+		String query="insert into Product values(?,?,?)";
 		
-		return jdt.query(sql, prm);
+		int i=jdt.update(query,p.getProductId(),p.getProductName(),p.getProductPrice());
+		if(i>0)
+			return "Updated Successfully!!!";
+		else
+			return "Problem in Updation!!!";
 	}
 }
