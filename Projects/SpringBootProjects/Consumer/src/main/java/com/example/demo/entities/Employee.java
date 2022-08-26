@@ -4,10 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
-import org.springframework.hateoas.RepresentationModel;
 import org.springframework.stereotype.Component;
 
-public class Employee{
+public class Employee {
 	private int id;
 	private String name;
 	private int salary;
@@ -19,7 +18,9 @@ public class Employee{
 		this.name = name;
 		this.salary = salary;
 	}
-	
+
+
+
 	public int getId() {
 		return id;
 	}
