@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="emp1" class="com.demo.springcore.beans.Employee" scope="singleton" init-method="myCustomInit" destroy-method="myCustomDestroy">
+<constructor-arg value="Ronit" index="1"></constructor-arg>
+<constructor-arg value="101" index="0"></constructor-arg>
+<constructor-arg ref="add1" index="2"></constructor-arg>
+	
+	<!-- <property name="empId" value="101"></property>
+	<property name="empName" value="Ronit"></property>
+	<property name="empAddress" ref="add1"></property> -->
+</bean>
+
+<bean id="add1" class="com.demo.springcore.beans.Address">
+	<property name="address" value="${employee.address.add}"></property>
+	<property name="city" value="${employee.address.city}"></property>
+	<property name="state" value="${employee.address.state}"></property>
+	<property name="zipcode" value="${employee.address.zipcode}"></property>
+</bean>
+
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="location" value="data.properties"></property>
+</bean>
+
+<bean class="com.demo.springcore.beans.MyBeanPostProcessor"></bean>
+</beans>
