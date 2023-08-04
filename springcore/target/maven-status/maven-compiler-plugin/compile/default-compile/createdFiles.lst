@@ -1,0 +1,4 @@
+com\demo\springcore\App.class
+com\demo\springcore\beans\Address.class
+com\demo\springcore\beans\Employee.class
+com\demo\springcore\beans\MyBeanPostProcessor.class
